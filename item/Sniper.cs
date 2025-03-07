@@ -17,7 +17,7 @@ namespace CustomWeapons
     {
         public override uint Id { get; set; } = 3001;
         public override string Name { get; set; } = "M-98 Sniper";
-        public override string Description { get; set; } = "🔭 سلاح قناص قوي مع سكوب تكبير، يمكن إطلاق طلقة كل 15 ثانية!";
+        public override string Description { get; set; } = "🔭Powerful sniper weapon with zoom scope, a shot can be fired every 15 seconds!";
         public override ItemType Type { get; set; } = ItemType.GunE11SR;
         public override float Weight { get; set; } = 6f;
         public override SpawnProperties SpawnProperties { get; set; }
@@ -49,7 +49,7 @@ namespace CustomWeapons
             if (ev.Player.CurrentItem is Firearm firearm)
             {
                 firearm.AddAttachment(AttachmentName.ScopeSight);
-                ev.Player.ShowHint("<color=green>🔭 تم تركيب سكوب عالي التكبير!</color>", 3f);
+                ev.Player.ShowHint("<color=green>🔭 High magnification scope installed!</color>", 3f);
             }
         }
 
@@ -65,14 +65,14 @@ namespace CustomWeapons
                 if (timeSinceLastShot < CooldownTime)
                 {
                     float remainingTime = CooldownTime - timeSinceLastShot;
-                    ev.Player.ShowHint($"<color=red>⏳ يجب الانتظار {remainingTime:F1} ثانية قبل الإطلاق مجدداً!</color>", 2f);
+                    ev.Player.ShowHint($"<color=red>⏳ Must wait {remainingTime:F1} seconds before launching again!</color>", 2f);
                     ev.IsAllowed = false;
                     return;
                 }
             }
 
             lastShotTime[ev.Player] = currentTime;
-            ev.Player.ShowHint("<color=red>🔄 تحتاج إلى إعادة التلقيم!</color>", 3f);
+            ev.Player.ShowHint("<color=red>🔄 You need to reload!</color>", 3f);
 
             // ✅ تشغيل العداد التنازلي
             Timing.RunCoroutine(ShowCooldown(ev.Player));
@@ -80,7 +80,7 @@ namespace CustomWeapons
             if (ev.Player != null)
             {
                 ev.Player.EnableEffect(EffectType.Concussed, 5f);
-                Log.Info($"{ev.Player.Nickname} أطلق من سلاح القنص!");
+                Log.Info($"{ev.Player.Nickname} Fired from a sniper weapon!");
             }
         }
 
@@ -88,7 +88,7 @@ namespace CustomWeapons
         {
             for (float i = CooldownTime; i > 0; i -= 1f)
             {
-                player.ShowHint($"<color=yellow>⏳ إعادة التلقيم: {i:F0} ثانية</color>", 1f);
+                player.ShowHint($"<color=yellow>⏳ Reloading: {i:F0} second</color>", 1f);
                 yield return Timing.WaitForSeconds(1f);
             }
         }

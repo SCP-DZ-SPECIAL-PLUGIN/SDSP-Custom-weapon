@@ -13,7 +13,7 @@ namespace CustomWeapons
     {
         public override uint Id { get; set; } = 4001; // رقم مميز للسلاح
         public override string Name { get; set; } = "Tranquilizer Gun";
-        public override string Description { get; set; } = "🔫 يطلق رصاصة مخدرة تسبب الشلل المؤقت.";
+        public override string Description { get; set; } = "🔫 He fires an anesthetic bullet that causes temporary paralysis.";
         public override ItemType Type { get; set; } = ItemType.GunCOM15; // استخدام مسدس كقاعدة
         public override float Weight { get; set; } = 3f;
         public override SpawnProperties SpawnProperties { get; set; }
@@ -42,9 +42,9 @@ namespace CustomWeapons
 
             ev.IsAllowed = false; // منع الضرر الحقيقي
             ev.Player.EnableEffect(EffectType.Ensnared, StunDuration); // شلل مؤقت
-            ev.Player.ShowHint("<color=red>💉 لقد تعرضت للتخدير!</color>", 3f);
+            ev.Player.ShowHint("<color=red>💉 I was drugged!</color>", 3f);
 
-            Log.Info($"{ev.Attacker.Nickname} أطلق رصاصة تخدير على {ev.Player.Nickname}!");
+            Log.Info($"{ev.Attacker.Nickname} He fired a tranquilizer bullet at  {ev.Player.Nickname}!");
         }
     }
 }
