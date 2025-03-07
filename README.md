@@ -37,6 +37,6 @@ Have suggestions or want to stay updated? Join our **Discord server** for exclus
 ## 📢 Developers  
 🛠 **Created by:** *MONCEF50G & HISHAM F96*  
 📅 **Version:** *1.0*  
-🔓 **License:** *MIT - Free to modify with credit*  
+🔓 **License:** *MIT*  
 
 🔥 **Enjoy your custom weapons! More updates coming soon!** 🚀
