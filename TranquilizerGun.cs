@@ -1,6 +1,3 @@
-/// this file is secure with MIT licens dont copy this project or get this project
-/// created by SDSP company > dzarenafixers > Moncef50g
-
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Spawn;
@@ -9,8 +6,6 @@ using Exiled.Events.EventArgs.Player;
 
 namespace Sniper_NTF.item
 {
-    /// this file is secure with MIT licens dont copy this project or get this project
-    /// created by SDSP company > dzarenafixers > MONCEF50G
     public class TranquilizerGun : CustomWeapon
     {
         public override uint Id { get; set; } = 4001; // رقم مميز للسلاح
@@ -22,8 +17,7 @@ namespace Sniper_NTF.item
         public override float Damage { get; set; } = 1f; // ضرر بسيط فقط لتنشيط الحدث
         public override byte ClipSize { get; set; } = 3; // 3 طلقات فقط قبل التذخير
         public override bool ShouldMessageOnGban { get; } = true;
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > MONCEF50G
+
         // مدة التخدير من `Config`
         private float StunDuration => Plugin.Instance.Config.TranquilizerStunTime;
 
@@ -32,15 +26,13 @@ namespace Sniper_NTF.item
             Exiled.Events.Handlers.Player.Hurting += OnHurting;
             base.SubscribeEvents();
         }
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > MONCEF50G
+
         protected override void UnsubscribeEvents()
         {
             Exiled.Events.Handlers.Player.Hurting -= OnHurting;
             base.UnsubscribeEvents();
         }
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > MONCEF50G
+
         private void OnHurting(HurtingEventArgs ev)
         {
             if (!Check(ev.Attacker.CurrentItem)) return;
@@ -53,5 +45,3 @@ namespace Sniper_NTF.item
         }
     }
 }
-/// this file is secure with MIT licens dont copy this project or get this project
-/// created by SDSP company > dzarenafixers > Moncef50g

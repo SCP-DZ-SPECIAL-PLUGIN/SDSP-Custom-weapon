@@ -1,6 +1,3 @@
-/// this file is secure with MIT licens dont copy this project or get this project
-/// created by SDSP company > dzarenafixers > Moncef50g
-
 using System.Collections.Generic;
 using Exiled.API.Enums;
 using Exiled.API.Features;
@@ -16,8 +13,6 @@ namespace Sniper_NTF.item
 {
     public class SniperRifle : CustomWeapon
     {
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > Moncef50g
         public override uint Id { get; set; } = 3001;
         public override string Name { get; set; } = "M-98 Sniper";
         public override string Description { get; set; } = "🔭Powerful sniper weapon with zoom scope, a shot can be fired every 15 seconds!";
@@ -44,8 +39,7 @@ namespace Sniper_NTF.item
             Exiled.Events.Handlers.Player.Shooting -= OnShooting;
             base.UnsubscribeEvents();
         }
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > Moncef50g
+
         private void OnPickingUpItem(PickingUpItemEventArgs ev)
         {
             if (!Check(ev.Pickup)) return;
@@ -56,8 +50,7 @@ namespace Sniper_NTF.item
                 ev.Player.ShowHint("<color=green>🔭 High magnification scope installed!</color>", 3f);
             }
         }
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > Moncef50g
+
         private void OnShooting(ShootingEventArgs ev)
         {
             if (!Check(ev.Player.CurrentItem)) return;
@@ -75,8 +68,7 @@ namespace Sniper_NTF.item
                     return;
                 }
             }
-            /// this file is secure with MIT licens dont copy this project or get this project
-            /// created by SDSP company > dzarenafixers > Moncef50g
+
             lastShotTime[ev.Player] = currentTime;
             ev.Player.ShowHint("<color=red>🔄 You need to reload!</color>", 3f);
 
@@ -89,8 +81,7 @@ namespace Sniper_NTF.item
                 Log.Info($"{ev.Player.Nickname} Fired from a sniper weapon!");
             }
         }
-        /// this file is secure with MIT licens dont copy this project or get this project
-        /// created by SDSP company > dzarenafixers > Moncef50g
+
         private IEnumerator<float> ShowCooldown(Player player)
         {
             for (float i = CooldownTime; i > 0; i -= 1f)
@@ -101,5 +92,3 @@ namespace Sniper_NTF.item
         }
     }
 }
-/// this file is secure with MIT licens dont copy this project or get this project
-/// created by SDSP company > dzarenafixers > Moncef50g
